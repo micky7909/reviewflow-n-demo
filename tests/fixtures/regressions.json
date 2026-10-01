@@ -1,0 +1,37 @@
+[
+  {
+    "id": "empty-keyword-hang",
+    "bug": "ensureKw loops forever when the keyword is empty (countKw always returns 0)",
+    "phase": 1,
+    "input": { "brand": "부산역 광장마사지", "mainKw": "", "kwTarget": "7" },
+    "expect": "genBlog returns without hanging and adds no filler sentences"
+  },
+  {
+    "id": "huge-keyword-target",
+    "bug": "kwTarget max=12 is not enforced, so a large target appends sentences for a very long time",
+    "phase": 1,
+    "input": { "mainKw": "부산역 마사지 잘하는 곳", "kwTarget": "100000" },
+    "expect": "target is clamped to the input's 1..12 range"
+  },
+  {
+    "id": "placeholder-disclosure",
+    "bug": "a disclosure placeholder like [협찬 문구 원문 상단 삽입] passes the disclosure regex",
+    "phase": 4,
+    "input": { "auditText": "[협찬 문구 원문 상단 삽입]\n오늘 다녀온 곳 후기입니다.", "auditSpon": "체험단 제공 있음" },
+    "expect": "disclosure finding is raised"
+  },
+  {
+    "id": "notice-scored-as-draft",
+    "bug": "the notice text is scored with draft rules, so the default page load shows a -15 length penalty",
+    "phase": 4,
+    "input": { "auditText": "오히려좋아 배너 상단 삽입. 협찬 문구 삽입. 키워드 본문 7번 반복. 현장 리뷰 필수. AI 활용은 자제 부탁드립니다." },
+    "expect": "notices are extracted into a spec, not scored as drafts"
+  },
+  {
+    "id": "fixed-object-particle",
+    "bug": "filler sentences always use 를, producing '잘하는 곳를' for keywords ending in a final consonant",
+    "phase": 3,
+    "input": { "mainKw": "부산역 마사지 잘하는 곳" },
+    "expect": "particle is chosen by final consonant: 곳을 / 마사지를"
+  }
+]
