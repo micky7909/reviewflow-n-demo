@@ -57,7 +57,7 @@ export function loadApp() {
   return {
     $: id => document.getElementById(id),
     call: (name, ...args) => app.handlers[name](...args),
-    state: app.state,
+    state: app.reels,
     storage,
   };
 }
