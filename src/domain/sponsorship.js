@@ -1,4 +1,5 @@
-// Sponsorship type, replacing the raw select string and the `!== '내돈내산'` comparisons.
+// Sponsorship type. Self-paid posts are a Special Case object (NoSponsorship), so callers
+// ask `requiresDisclosure` instead of comparing against '내돈내산'.
 
 const DISCLOSURES = {
   '체험단 제공 있음': '※ 본 포스팅은 체험단을 통해 서비스를 제공받아 직접 체험 후 작성한 후기입니다.',
@@ -15,13 +16,21 @@ export class Sponsorship {
     Object.freeze(this);
   }
 
-  static from(type) { return new Sponsorship(type || DEFAULT_SPONSORSHIP); }
-
-  // Unknown types are treated as sponsored, matching the original check.
-  get requiresDisclosure() { return this.type !== SELF_PAID; }
-
-  get disclosure() {
-    if (!this.requiresDisclosure) return null;
-    return DISCLOSURES[this.type] ?? DISCLOSURES[DEFAULT_SPONSORSHIP];
+  static from(type) {
+    if (type === SELF_PAID) return new NoSponsorship();
+    return new Sponsorship(type || DEFAULT_SPONSORSHIP);
   }
+
+  get requiresDisclosure() { return true; }
+
+  // Unknown types still get a disclosure, using the default wording.
+  get disclosure() { return DISCLOSURES[this.type] ?? DISCLOSURES[DEFAULT_SPONSORSHIP]; }
+}
+
+export class NoSponsorship extends Sponsorship {
+  constructor() { super(SELF_PAID); }
+
+  get requiresDisclosure() { return false; }
+
+  get disclosure() { return null; }
 }

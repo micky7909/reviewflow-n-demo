@@ -47,11 +47,13 @@ export function createApp({ document, storage, clipboard, setTimeout, now }) {
       byId(id).scrollIntoView({ behavior: 'smooth' });
     },
 
-    auditPolicy() {
+    // keywordTarget is known only when auditing a generated draft; a manual audit has none.
+    auditPolicy(keywordTarget = null) {
       byId('auditOut').textContent = auditPosting({
         text: byId('auditText').value,
         keyword: new Keyword(byId('auditKw').value),
         sponsorship: Sponsorship.from(byId('auditSpon').value),
+        keywordTarget,
       }).report;
       toast('Dr.포스팅 진단 완료');
     },
@@ -61,6 +63,7 @@ export function createApp({ document, storage, clipboard, setTimeout, now }) {
         brand: byId('brand').value,
         keyword: byId('mainKw').value,
         keywordTarget: byId('kwTarget').value,
+        sponsorship: byId('blogSpon').value,
       });
       const draft = buildDraft(spec, byId('memo').value);
       lastDraft = { spec, text: draftToText(draft) };
@@ -74,7 +77,7 @@ export function createApp({ document, storage, clipboard, setTimeout, now }) {
       byId('auditKw').value = lastDraft.spec.keyword.text;
       byId('auditSpon').value = lastDraft.spec.sponsorship.type;
       showTab('audit');
-      handlers.auditPolicy();
+      handlers.auditPolicy(lastDraft.spec.keywordTarget);
       handlers.go('demo');
     },
 

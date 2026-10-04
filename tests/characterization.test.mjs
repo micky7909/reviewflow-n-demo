@@ -1,6 +1,5 @@
 // Characterization tests: pin the CURRENT behavior of index.html before refactoring.
-// Some expectations here encode known bugs on purpose (marked "KNOWN BUG"); they are
-// changed deliberately in refactoring phase 4, not silently along the way.
+// Expectations change only on purpose, in the phase that changes the behavior.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
@@ -19,13 +18,15 @@ test('countKeyword counts literal occurrences, escaping regex characters', () =>
   assert.equal(countKeyword('text', ''), 0);
 });
 
-test('auditPolicy on the default notice scores 75', () => {
+// Phase 4: the default text is a notice, so it is listed as conditions instead of scored.
+test('auditPolicy lists the default notice as conditions without a score', () => {
   const app = loadApp();
   app.call('auditPolicy');
   const out = app.$('auditOut').textContent;
-  // KNOWN BUG: the 67-char notice is scored as if it were a draft (-15 length penalty).
-  assert.match(out, /Naver-fit 점수: 75\/100/);
-  assert.match(out, /키워드 반복: 0회/);
+  assert.match(out, /입력 종류: 체험단 공지/);
+  assert.match(out, /\[공지 조건 5개\]/);
+  assert.match(out, /키워드 반복 목표를 7회로/);
+  assert.doesNotMatch(out, /Naver-fit 점수/);
   snapshot('audit-default', out);
 });
 
@@ -59,7 +60,19 @@ test('auditFromBlog copies the draft and keyword into the audit tab', () => {
   app.call('auditFromBlog');
   assert.equal(app.$('auditText').value, app.$('blogOut').textContent);
   assert.equal(app.$('auditKw').value, app.$('mainKw').value);
-  assert.match(app.$('auditOut').textContent, /키워드 반복: 7회/);
+  assert.match(app.$('auditOut').textContent, /키워드 반복: 7회 \/ 목표 7회/);
+  // A fresh draft still has template slots to fill before publishing.
+  assert.match(app.$('auditOut').textContent, /Naver-fit 점수: 90\/100/);
+  assert.match(app.$('auditOut').textContent, /자리표시자/);
+});
+
+test('genBlog for a self-paid post has no disclosure or sponsorship slot', () => {
+  const app = loadApp();
+  app.$('blogSpon').value = '내돈내산';
+  app.call('genBlog');
+  const out = app.$('blogOut').textContent;
+  assert.doesNotMatch(out, /※ 본 포스팅은/);
+  assert.doesNotMatch(out, /\[협찬 문구 원문 상단 삽입\]/);
 });
 
 test('genReels builds A/B/C variants from comma-separated shots', () => {
