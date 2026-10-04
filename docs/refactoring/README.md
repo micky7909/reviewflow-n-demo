@@ -7,7 +7,7 @@
 |---|---|---|
 | 1 | 안전망: 특성 테스트, 회귀 데이터셋, CI, 치명 버그 가드 | 완료 |
 | 2 | 단계 쪼개기: 파일·모듈 분리, `auditPolicy` parse → check → score → render | 완료 |
-| 3 | 캡슐화·기능 이동: `CampaignSpec`, `Draft`, `Keyword`, `Sponsorship` | 예정 |
+| 3 | 캡슐화·기능 이동: `CampaignSpec`, `Draft`, `Keyword`, `Sponsorship` | 완료 |
 | 4 | 조건부 로직 → `Rule` 객체, 매직 리터럴 → 정책팩, 잘못된 규칙 수정 | 예정 |
 | 5 | 질의/변경 분리, `Runnable` 노드, 포트·어댑터, LLM 연결 | 예정 |
 
@@ -32,10 +32,10 @@
 | Long Function | `auditPolicy` (입력 읽기·규칙·점수·문자열·토스트) | 2 | 해결 |
 | Duplicated Code | 탭 전환 로직 (`index.html` 59행, 65행) | 2 | 해결 (`showTab`) |
 | Mysterious Name | `$`, `c`, `v`, `esc` | 2 | 해결 |
-| Global Data | `variants`, `selected` | 3 | 부분 해결: 전역 → `createApp` 내부 상태 |
-| Insider Trading | `auditFromBlog`가 다른 탭의 DOM을 직접 읽음 | 3 | 남음 |
-| Primitive Obsession | 키워드·협찬 유형이 문자열, `'내돈내산'` 비교 | 3, 4 | 남음 |
-| Data Clumps | 브랜드·키워드·협찬·목표 횟수가 탭마다 따로 존재 | 3 | 남음 |
+| Global Data | `variants`, `selected` | 3 | 해결 (`ReelSession`) |
+| Insider Trading | `auditFromBlog`가 다른 탭의 DOM을 직접 읽음 | 3 | 해결: 마지막 초안과 그 spec 사용 |
+| Primitive Obsession | 키워드·협찬 유형이 문자열, `'내돈내산'` 비교 | 3, 4 | 해결 (`Keyword`, `Sponsorship`) |
+| Data Clumps | 브랜드·키워드·협찬·목표 횟수가 탭마다 따로 존재 | 3 | 부분 해결: `CampaignSpec`으로 묶음. 탭마다 입력칸이 따로 있는 화면 구조는 그대로 |
 | Repeated Switches | `auditPolicy`의 if 체인 | 4 | 부분 해결: if 체인 → 규칙 테이블 |
 | Magic Literals | 감점 25/10/12/15, 기준 500자·9회 | 4 | 남음 (규칙 테이블에 모임) |
 | 질의와 변경 혼합 | `ensureKw` (검사하면서 본문 수정) | 5 | 남음 |
@@ -87,3 +87,35 @@ ES 모듈은 `file://`로 열면 브라우저가 막습니다. 로컬에서는 �
 ```
 python3 -m http.server 8000   # http://localhost:8000
 ```
+
+## 3단계 결과
+
+『리팩터링』 7장(캡슐화)과 8장(기능 이동)을 적용했습니다. 커밋을 두 개로 나눴습니다. 첫 커밋은 구조만 바꿔서 스냅샷이 그대로이고, 두 번째 커밋만 출력(조사)을 바꿉니다.
+
+### 새 도메인 객체
+
+| 객체 | 파일 | 대체한 것 |
+|---|---|---|
+| `CampaignSpec` | `domain/campaign.js` | 탭마다 흩어진 업체명·키워드·목표 횟수·협찬 유형. 입력 정리와 목표 횟수 제한도 여기서 |
+| `Keyword` | `domain/keyword.js` | 키워드 문자열. 개수 세기와 조사 선택을 가짐 |
+| `Sponsorship` | `domain/sponsorship.js` | 협찬 유형 문자열과 `!== '내돈내산'` 비교. 공시 필요 여부와 유형별 공시 문구를 가짐 |
+| `Draft` | `domain/blog.js` | 초안 문자열 하나. 제목·본문·공시를 나눠 담고 `draftToText`로 합침 |
+| `Finding` | `domain/audit.js` | 감점 메모. 어떤 규칙에서 나왔는지 `ruleId`를 가짐 |
+| `ReelSession` | `domain/reels.js` | 앱 상태의 `variants`, `selected` |
+
+검사 규칙은 `domain/rules.js`로 옮겼습니다(함수 옮기기).
+
+### 의도한 동작 변경
+
+- **조사:** 받침에 따라 을/를, 은/는, 으로/로를 고릅니다(`domain/korean.js`). 받침이 없거나 한글이 아닌 끝 글자는 예전처럼 를/는/로를 씁니다. 기본 초안에서 `곳를→곳을`, `곳로→곳으로`, `광장마사지은→광장마사지는` 여섯 곳이 바뀌었고 스냅샷을 갱신했습니다. 회귀 케이스 `fixed-object-particle`이 통과합니다.
+- **`auditFromBlog`:** 화면의 초안 칸과 키워드 칸을 읽지 않고, 마지막으로 만든 초안과 그 `CampaignSpec`을 씁니다.
+  - 초안을 만든 뒤 키워드 칸을 고쳐도, 재진단은 초안을 만들 때의 키워드로 합니다.
+  - 진단 탭의 협찬 유형을 초안의 협찬 유형으로 맞춥니다. 초안은 체험단 공시를 달고 나오는데 진단은 "내돈내산"으로 채점하던 불일치가 없어집니다.
+  - 초안이 없으면 안내 문구 자리 글을 진단하지 않고 "먼저 초안을 만드세요"를 표시합니다.
+- **진단 탭 키워드 앞뒤 공백:** `Keyword`가 앞뒤 공백을 지웁니다. 초안 탭은 원래 지웠고, 이제 진단 탭도 같은 방식으로 셉니다.
+
+### 남은 알려진 버그 (주석 `KNOWN BUG`)
+
+- 초안 탭에 협찬 유형 입력이 없어서 초안 공시는 항상 기본값(체험단)입니다. `Draft`와 `Sponsorship`은 준비됐으니 화면 입력만 추가하면 됩니다.
+- "본문 키워드" 개수가 제목까지 셉니다. `Draft`가 제목을 나눠 담으므로 4단계에서 고치기 쉬워졌습니다.
+- 키워드 개수를 맞추려고 정해진 문장을 덧붙이는 동작은 5단계에서 검사(질의)와 수정(변경)으로 나눕니다.

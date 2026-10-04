@@ -76,11 +76,12 @@ test('buildDraft keeps title, body and disclosure apart and meets the target', (
   assert.match(draft.body, /■ 첫인상\n\n메모\n/);
   assert.match(draftToText(draft), /^맛집 가게, 직접 다녀온 후기\n\n\[오히려좋아/);
   assert.match(draftToText(draft), /※ 본 포스팅은 체험단을 통해/);
+  assert.match(draft.body, /가게는 체험단 글로/);
 });
 
 test('ensureKeyword leaves text alone without a keyword or target', () => {
-  assert.equal(ensureKeyword('본문', '', 7), '본문');
-  assert.equal(ensureKeyword('본문', '키워드', 0), '본문');
+  assert.equal(ensureKeyword('본문', new Keyword(''), 7), '본문');
+  assert.equal(ensureKeyword('본문', new Keyword('키워드'), 0), '본문');
 });
 
 test('parseShots splits on commas and drops blanks', () => {
