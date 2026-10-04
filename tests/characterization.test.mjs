@@ -88,3 +88,23 @@ test('joinWaitlist stores one record in localStorage', () => {
   assert.equal(saved.name, '데이엔');
   assert.equal(saved.use, '체험단 블로그 작성');
 });
+
+// Phase 3: auditFromBlog reads the last generated draft, not the blog tab's inputs.
+test('auditFromBlog without a draft asks for one and leaves the audit untouched', () => {
+  const app = loadApp();
+  const before = app.$('auditText').value;
+  app.call('auditFromBlog');
+  assert.equal(app.$('auditText').value, before);
+  assert.equal(app.$('toast').textContent, '먼저 초안을 만드세요');
+});
+
+test('auditFromBlog audits with the campaign the draft was built from', () => {
+  const app = loadApp();
+  app.call('genBlog');
+  app.$('mainKw').value = '나중에 바꾼 키워드';
+  app.$('auditSpon').value = '내돈내산';
+  app.call('auditFromBlog');
+  assert.equal(app.$('auditKw').value, '부산역 마사지 잘하는 곳');
+  assert.equal(app.$('auditSpon').value, '체험단 제공 있음');
+  assert.match(app.$('auditOut').textContent, /키워드 반복: 7회/);
+});

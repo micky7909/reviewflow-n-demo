@@ -1,8 +1,11 @@
 // Presentation layer: reads inputs from the page, calls the domain, writes results.
 // Browser globals are injected so the layer runs in tests without a real DOM.
 import { auditPosting } from '../domain/audit.js';
-import { normalizeBlogInput, buildBlogDraft } from '../domain/blog.js';
-import { parseShots, buildReelVariants, applyReelEdits, formatReelScript } from '../domain/reels.js';
+import { buildDraft, draftToText } from '../domain/blog.js';
+import { createCampaignSpec } from '../domain/campaign.js';
+import { Keyword } from '../domain/keyword.js';
+import { Sponsorship } from '../domain/sponsorship.js';
+import { parseShots, formatReelScript, ReelSession } from '../domain/reels.js';
 import { WAITLIST_STORAGE_KEY, buildWaitlistRecord, formatWaitlistConfirmation } from '../domain/waitlist.js';
 
 const DEFAULT_CTA = '저장해두고 방문 전 확인하세요';
@@ -17,7 +20,10 @@ function reelCardsHtml(variants, selectedId) {
  */
 export function createApp({ document, storage, clipboard, setTimeout, now }) {
   const byId = id => document.getElementById(id);
-  const state = { variants: [], selected: null };
+  const reels = new ReelSession();
+  // The last generated draft and the campaign it was built from; read by auditFromBlog
+  // instead of reaching into the blog tab's inputs.
+  let lastDraft = null;
 
   function toast(message) {
     const el = byId('toast');
@@ -32,7 +38,7 @@ export function createApp({ document, storage, clipboard, setTimeout, now }) {
   }
 
   function renderReelCards() {
-    byId('reelCards').innerHTML = reelCardsHtml(state.variants, state.selected?.id);
+    byId('reelCards').innerHTML = reelCardsHtml(reels.variants, reels.selected?.id);
   }
 
   // Handlers referenced by onclick attributes in index.html.
@@ -44,33 +50,36 @@ export function createApp({ document, storage, clipboard, setTimeout, now }) {
     auditPolicy() {
       byId('auditOut').textContent = auditPosting({
         text: byId('auditText').value,
-        keyword: byId('auditKw').value,
-        sponsorship: byId('auditSpon').value,
-      });
+        keyword: new Keyword(byId('auditKw').value),
+        sponsorship: Sponsorship.from(byId('auditSpon').value),
+      }).report;
       toast('Dr.포스팅 진단 완료');
     },
 
     genBlog() {
-      const input = normalizeBlogInput({
+      const spec = createCampaignSpec({
         brand: byId('brand').value,
         keyword: byId('mainKw').value,
-        target: byId('kwTarget').value,
-        memo: byId('memo').value,
+        keywordTarget: byId('kwTarget').value,
       });
-      byId('blogOut').textContent = buildBlogDraft(input);
+      const draft = buildDraft(spec, byId('memo').value);
+      lastDraft = { spec, text: draftToText(draft) };
+      byId('blogOut').textContent = lastDraft.text;
       toast('초안 처방 완료');
     },
 
     auditFromBlog() {
-      byId('auditText').value = byId('blogOut').textContent;
-      byId('auditKw').value = byId('mainKw').value;
+      if (!lastDraft) { toast('먼저 초안을 만드세요'); return; }
+      byId('auditText').value = lastDraft.text;
+      byId('auditKw').value = lastDraft.spec.keyword.text;
+      byId('auditSpon').value = lastDraft.spec.sponsorship.type;
       showTab('audit');
       handlers.auditPolicy();
       handlers.go('demo');
     },
 
     genReels() {
-      state.variants = buildReelVariants({
+      reels.generate({
         topic: byId('reelTopic').value,
         point: byId('reelPoint').value,
         shots: parseShots(byId('reelShots').value),
@@ -80,12 +89,12 @@ export function createApp({ document, storage, clipboard, setTimeout, now }) {
     },
 
     chooseReel(index) {
-      state.selected = structuredClone(state.variants[index]);
+      const selected = reels.choose(index);
       byId('customBox').classList.add('show');
-      byId('customTitle').textContent = `${state.selected.id}안 · ${state.selected.name}`;
-      byId('editHook').value = state.selected.hook;
-      byId('editScenes').value = state.selected.scenes.join('\n');
-      byId('editCaption').value = state.selected.caption;
+      byId('customTitle').textContent = `${selected.id}안 · ${selected.name}`;
+      byId('editHook').value = selected.hook;
+      byId('editScenes').value = selected.scenes.join('\n');
+      byId('editCaption').value = selected.caption;
       byId('editCta').value = DEFAULT_CTA;
       handlers.applyCustom();
       renderReelCards();
@@ -93,13 +102,13 @@ export function createApp({ document, storage, clipboard, setTimeout, now }) {
     },
 
     applyCustom() {
-      if (!state.selected) { toast('먼저 영상안을 선택하세요'); return; }
-      state.selected = applyReelEdits(state.selected, {
+      const edited = reels.edit({
         hook: byId('editHook').value,
         scenesText: byId('editScenes').value,
         caption: byId('editCaption').value,
       });
-      byId('reelScript').textContent = formatReelScript(state.selected, byId('editCta').value);
+      if (!edited) { toast('먼저 영상안을 선택하세요'); return; }
+      byId('reelScript').textContent = formatReelScript(edited, byId('editCta').value);
       toast('수정 반영 완료');
     },
 
@@ -125,5 +134,5 @@ export function createApp({ document, storage, clipboard, setTimeout, now }) {
     handlers.auditPolicy();
   }
 
-  return { handlers, state, start };
+  return { handlers, reels, start };
 }

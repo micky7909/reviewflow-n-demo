@@ -35,3 +35,30 @@ export function applyReelEdits(variant, { hook, scenesText, caption }) {
 export function formatReelScript(variant, cta) {
   return `[Dr.포스팅 릴스 처방 ${variant.id}안 · ${variant.name}]\n\n첫 2초 훅:\n${variant.hook}\n\n컷 구성:\n${variant.scenes.map((s, i) => `${i + 1}. ${s}`).join('\n')}\n\n캡션:\n${variant.caption}\n\nCTA:\n${cta}`;
 }
+
+/** Holds the generated variants and the one being edited. Replaces two loose globals. */
+export class ReelSession {
+  #variants = [];
+  #selected = null;
+
+  get variants() { return this.#variants; }
+
+  get selected() { return this.#selected; }
+
+  generate(input) {
+    this.#variants = buildReelVariants(input);
+    return this.#variants;
+  }
+
+  // Editing works on a copy, so the card list keeps the generated version.
+  choose(index) {
+    this.#selected = structuredClone(this.#variants[index]);
+    return this.#selected;
+  }
+
+  edit(edits) {
+    if (!this.#selected) return null;
+    this.#selected = applyReelEdits(this.#selected, edits);
+    return this.#selected;
+  }
+}
