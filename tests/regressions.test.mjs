@@ -1,42 +1,30 @@
 // Runs the regression dataset. Cases scheduled for a later refactoring phase are
 // registered as `todo` so they stay visible in the report without failing CI.
 import { test } from 'node:test';
-import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { loadApp } from './harness.mjs';
+import { Worker } from 'node:worker_threads';
 
 const cases = JSON.parse(readFileSync(new URL('./fixtures/regressions.json', import.meta.url), 'utf8'));
-const CURRENT_PHASE = 1;
+const CURRENT_PHASE = 2;
+const TIMEOUT_MS = 2000;
 
-const checks = {
-  'empty-keyword-hang'(app) {
-    app.call('genBlog');
-    const out = app.$('blogOut').textContent;
-    assert.doesNotMatch(out, /후보로 넣어볼 만했습니다/);
-  },
-  'huge-keyword-target'(app) {
-    app.call('genBlog');
-    assert.match(app.$('blogOut').textContent, /목표 12회/);
-  },
-  'placeholder-disclosure'(app) {
-    app.call('auditPolicy');
-    assert.match(app.$('auditOut').textContent, /대가성 표시가 약합니다/);
-  },
-  'notice-scored-as-draft'(app) {
-    app.call('auditPolicy');
-    assert.doesNotMatch(app.$('auditOut').textContent, /정보량이 부족합니다/);
-  },
-  'fixed-object-particle'(app) {
-    app.call('genBlog');
-    assert.doesNotMatch(app.$('blogOut').textContent, /곳를/);
-  },
-};
+function runCase({ id, input }) {
+  return new Promise((resolve, reject) => {
+    const worker = new Worker(new URL('./regression-worker.mjs', import.meta.url), { workerData: { id, input } });
+    const timer = setTimeout(() => {
+      worker.terminate();
+      reject(new Error(`timed out after ${TIMEOUT_MS}ms (likely an infinite loop)`));
+    }, TIMEOUT_MS);
+    worker.once('message', result => {
+      clearTimeout(timer);
+      worker.terminate();
+      result.ok ? resolve() : reject(new Error(result.message));
+    });
+    worker.once('error', error => { clearTimeout(timer); reject(error); });
+  });
+}
 
 for (const c of cases) {
   const todo = c.phase > CURRENT_PHASE ? `scheduled for refactoring phase ${c.phase}` : false;
-  test(`regression: ${c.id}`, { todo }, () => {
-    const app = loadApp({ timeout: 2000 });
-    for (const [id, value] of Object.entries(c.input)) app.$(id).value = value;
-    checks[c.id](app);
-  });
+  test(`regression: ${c.id}`, { todo }, () => runCase(c));
 }
