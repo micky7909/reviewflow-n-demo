@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import { Worker } from 'node:worker_threads';
 
 const cases = JSON.parse(readFileSync(new URL('./fixtures/regressions.json', import.meta.url), 'utf8'));
-const CURRENT_PHASE = 3;
+const CURRENT_PHASE = 4;
 const TIMEOUT_MS = 2000;
 
 function runCase({ id, input }) {
