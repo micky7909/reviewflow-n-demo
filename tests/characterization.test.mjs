@@ -5,6 +5,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { loadApp } from './harness.mjs';
+import { countKeyword } from '../src/domain/keyword.js';
 
 function snapshot(name, actual) {
   const file = new URL(`./__snapshots__/${name}.txt`, import.meta.url);
@@ -12,11 +13,10 @@ function snapshot(name, actual) {
   assert.equal(actual, readFileSync(file, 'utf8'), `snapshot ${name} changed (UPDATE_SNAPSHOTS=1 to accept)`);
 }
 
-test('countKw counts literal occurrences, escaping regex characters', () => {
-  const app = loadApp();
-  assert.equal(app.call('countKw', 'a.b a.b axb', 'a.b'), 2);
-  assert.equal(app.call('countKw', '부산역 마사지, 부산역 마사지', '부산역 마사지'), 2);
-  assert.equal(app.call('countKw', 'text', ''), 0);
+test('countKeyword counts literal occurrences, escaping regex characters', () => {
+  assert.equal(countKeyword('a.b a.b axb', 'a.b'), 2);
+  assert.equal(countKeyword('부산역 마사지, 부산역 마사지', '부산역 마사지'), 2);
+  assert.equal(countKeyword('text', ''), 0);
 });
 
 test('auditPolicy on the default notice scores 75', () => {
