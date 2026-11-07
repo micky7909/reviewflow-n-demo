@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="DAYEN Content Lab smiling cloud scientist icon">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#81BFF9"/><stop offset=".49" stop-color="#AAAEF8"/><stop offset="1" stop-color="#F8BDE3"/></linearGradient>
+<radialGradient id="glow" cx=".27" cy=".17" r=".92"><stop stop-color="#FFFFFF" stop-opacity=".64"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+<linearGradient id="cloud" x1=".1" y1=".2" x2=".85" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".7" stop-color="#F9F9FF"/><stop offset="1" stop-color="#E1E8FC"/></linearGradient>
+<linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F9FFFF" stop-opacity=".96"/><stop offset="1" stop-color="#DFEDFF" stop-opacity=".9"/></linearGradient>
+<linearGradient id="liquid" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FF9CCB"/><stop offset="1" stop-color="#EE7FB6"/></linearGradient>
+<filter id="shadow" x="-30%" y="-40%" width="160%" height="190%"><feDropShadow dx="0" dy="18" stdDeviation="17" flood-color="#4C6CB7" flood-opacity=".27"/></filter>
+<filter id="soft" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<rect width="512" height="512" rx="116" fill="url(#bg)"/>
+<rect width="512" height="512" rx="116" fill="url(#glow)"/>
+<path d="M52 409C105 371 143 403 193 417S307 392 367 401 448 417 475 385V512H30Z" fill="#FFFFFF" opacity=".18"/>
+<circle cx="76" cy="101" r="4" fill="#FFF" opacity=".9"/><circle cx="412" cy="86" r="5" fill="#FFF" opacity=".9"/>
+<path d="m92 142 7 20 20 7-20 7-7 20-7-20-20-7 20-7z" fill="#FFF" opacity=".95"/>
+<path d="m418 135 5 14 14 5-14 5-5 14-5-14-14-5 14-5z" fill="#FFF"/>
+<path d="m360 74 5 13 13 5-13 5-5 13-5-13-13-5 13-5z" fill="#FDE5F5"/>
+<g opacity=".9" fill="none" stroke-linecap="round">
+<path d="M308 87C392 113 318 165 390 190M392 86C321 113 403 164 337 190" stroke="#F8BEDF" stroke-width="12"/>
+<path d="m331 101 44 0m-46 28 46 0m-46 29 46 0" stroke="#FCE5F5" stroke-width="7"/>
+</g>
+<g filter="url(#shadow)">
+<path d="M118 333C74 336 60 289 78 253c13-27 39-39 69-39 3-44 37-73 81-76 29-2 51 11 68 32 35-21 83-1 92 36 43-5 74 29 70 65-4 37-31 59-70 59Z" fill="url(#cloud)"/>
+<path d="M121 324C87 324 76 296 86 270c9-24 35-40 64-38M175 191c12-31 45-44 76-37" stroke="#FFF" stroke-width="11" stroke-linecap="round" fill="none" opacity=".92"/>
+<ellipse cx="191" cy="264" rx="8" ry="11" fill="#333966"/><ellipse cx="289" cy="264" rx="8" ry="11" fill="#333966"/>
+<ellipse cx="154" cy="284" rx="23" ry="13" fill="#FFA1C6" opacity=".54"/><ellipse cx="325" cy="284" rx="23" ry="13" fill="#FFA1C6" opacity=".54"/>
+<path d="M222 280q17 20 34 0" fill="none" stroke="#65557C" stroke-width="7" stroke-linecap="round"/>
+<circle cx="188" cy="260" r="2.7" fill="#FFFFFF"/><circle cx="286" cy="260" r="2.7" fill="#FFFFFF"/>
+</g>
+<g filter="url(#shadow)">
+<path d="M372 277v53c0 13 12 32 26 52 15 22 12 46-14 53h-92c-27-7-30-31-14-54 15-21 26-40 26-52v-52" fill="url(#glass)" stroke="#E6F1FF" stroke-width="11" stroke-linejoin="round"/>
+<path d="M292 376c-10 16-16 28-12 41 3 6 8 10 18 12h78c13-2 22-17 12-35l-13-23c-25 10-48-3-83 5Z" fill="url(#liquid)" opacity=".96"/>
+<rect x="298" y="265" width="80" height="17" rx="8.5" fill="#E7F8FF" stroke="#FCFFFF" stroke-width="5"/>
+<path d="m337 383-6-7c-11-10-25 5-10 17l16 15 17-15c14-12-1-27-11-17Z" fill="#FFF" opacity=".98"/>
+<circle cx="313" cy="398" r="5" fill="#FFF" opacity=".42"/><circle cx="362" cy="404" r="7" fill="#FFF" opacity=".38"/>
+</g>
+<path d="m115 86 7 20 20 7-20 7-7 20-7-20-20-7 20-7z" fill="#FFF" opacity=".8"/>
+</svg>
