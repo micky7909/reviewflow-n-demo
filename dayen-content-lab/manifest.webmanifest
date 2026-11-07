@@ -1,0 +1,18 @@
+{
+  "name": "DAYEN CONTENT LAB",
+  "short_name": "DAYEN LAB",
+  "description": "생활 속 과학 콘텐츠를 SNS별로 기획하는 데이엔의 AI 콘텐츠 편집실",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F8FBFD",
+  "theme_color": "#91BDF4",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
