@@ -1,7 +1,7 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#e4f2ff"><title>DAYEN CONTENT LAB · 과학 커뮤니케이터의 AI 편집실</title><style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
 :root{--ink:#1b3049;--muted:#6e8092;--line:#e4ebf3;--blue:#dceffd;--bg:#f8fbfd;--mint:#d8f5ec;--pink:#ffe2ed;--accent:#447fcd;--white:#fff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans','Noto Sans KR',sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:var(--accent)}.app{max-width:1480px;margin:auto;min-height:100vh;display:grid;grid-template-columns:244px 1fr}.side{border-right:1px solid var(--line);background:#fff;padding:28px 19px;display:flex;flex-direction:column;gap:29px;position:sticky;top:0;height:100vh}.logo{font-weight:800;font-size:23px;line-height:1.15;letter-spacing:-.6px}.logo small{display:block;font-size:11px;color:#94a7b6;letter-spacing:2px;margin-top:7px}.nav{display:flex;flex-direction:column;gap:8px}.nav button{width:100%;border:0;text-align:left;background:transparent;color:#63758a;padding:13px 14px;border-radius:13px;font-weight:700}.nav button.active,.nav button:hover{background:#e8f4fe;color:#215d95}.side-foot{margin-top:auto;background:#f6fafe;border:1px solid var(--line);border-radius:17px;padding:16px;font-size:12px;line-height:1.75;color:#688096}.main{padding:32px 40px 60px;min-width:0}.topline{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:27px}.eyebrow{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}.datepill{font-size:13px;background:white;border:1px solid var(--line);padding:11px 16px;border-radius:100px;color:#60738b}.hero{background:linear-gradient(108deg,#e3f2fc 0%,#f9f7fd 70%,#ffeaf0 100%);border-radius:27px;min-height:219px;display:flex;align-items:center;justify-content:space-between;padding:33px 37px;overflow:hidden;position:relative}.hero h1{font-size:clamp(26px,3vw,40px);letter-spacing:-1.8px;line-height:1.35;margin:11px 0}.hero p{color:#647b91;margin:0;line-height:1.65}.cloud{font-size:85px;filter:drop-shadow(0 13px 15px #8ac2de77);transform:rotate(-12deg);flex-shrink:0;margin-right:14px}.section-head{display:flex;align-items:center;justify-content:space-between;margin:30px 0 15px;gap:10px}.section-head h2{margin:0;font-size:21px;letter-spacing:-.6px}.small{font-size:12px;color:var(--muted)}.grid2{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(285px,.85fr);gap:18px}.panel{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:23px;box-shadow:0 9px 30px #9caec90c;min-width:0}.panel h3{margin:6px 0 12px;font-size:19px;line-height:1.5}.tag{display:inline-flex;font-size:11px;border-radius:50px;background:#ecf7ff;color:#4278af;padding:6px 10px;font-weight:700}.tag.pink{background:#fff0f5;color:#b0667d}.tag.mint{background:#e9f9f3;color:#398974}.tag.orange{background:#fff3e6;color:#a47a42}.story-head{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.story-desc{line-height:1.85;color:#62778b;font-size:14px}.source{margin-top:18px;padding:15px;border-radius:13px;background:#f6f9fc;border:1px solid var(--line);font-size:12px;line-height:1.7;word-break:break-word}.source strong{display:block;margin-bottom:5px;color:var(--ink)}.source .live{color:#308273}.source .unverified{color:#b17d48}.buttons{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.btn{border:1px solid #d6e5f1;background:#fff;color:#3e6e9c;padding:10px 14px;border-radius:11px;font-size:12px;font-weight:800}.btn.primary{background:#366fae;color:#fff;border-color:#366fae}.btn:hover{filter:brightness(.96)}.pilltabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}.pilltabs button{background:#f4f8fb;border:1px solid #e4eefa;border-radius:100px;padding:10px 14px;color:#697e91;font-size:12px;font-weight:800}.pilltabs button.active{background:#dfefff;border-color:#bedcf5;color:#235f96}.draft{width:100%;min-height:310px;padding:17px;resize:vertical;background:#fcfdff;color:#29435d;border:1px solid #dce7f1;border-radius:13px;font-size:13px;line-height:1.85}.infoLine{display:flex;justify-content:space-between;gap:9px;color:#7a8d9e;font-size:11px;flex-wrap:wrap}.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px}.day{border:1px solid #e3ebf3;background:white;border-radius:17px;text-align:left;padding:17px 10px;min-width:0}.day strong{display:block;margin:6px 0;font-size:18px}.day small{display:block;font-size:10px;line-height:1.5;color:#7990a0}.day.selected{background:#e2f1fd;border-color:#a9d3f6}.day.done{border-color:#b6e9d9;background:#f0fbf7}.article-list{display:grid;gap:10px}.article{padding:15px;border:1px solid var(--line);border-radius:13px;background:#fff;line-height:1.7}.article small{display:block;color:#8a9bad;font-size:11px;margin-top:6px}.masonry{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.idea{padding:20px;background:white;border:1px solid var(--line);border-radius:18px}.idea h4{margin:13px 0 8px}.idea p{font-size:12px;line-height:1.7;color:var(--muted)}.textinput{background:#fff;border:1px solid #d9e8f3;border-radius:11px;padding:11px 13px;width:100%;color:var(--ink)}.setting{display:flex;align-items:center;gap:12px;justify-content:space-between;border-bottom:1px solid #e9eef5;padding:14px 0;flex-wrap:wrap}.setting label{font-size:13px;font-weight:700}.setting select,.setting input{border:1px solid #d9e7ef;border-radius:10px;padding:9px;max-width:180px;background:white}.toast{position:fixed;right:20px;bottom:21px;background:#243f60;color:white;padding:13px 17px;border-radius:12px;box-shadow:0 12px 40px #37577c55;font-size:13px;opacity:0;transform:translateY(12px);pointer-events:none;transition:.22s;z-index:50}.toast.show{opacity:1;transform:translateY(0)}.hidden{display:none!important}.statusdot{display:inline-block;width:8px;height:8px;background:#8dc6a8;border-radius:100%;margin-right:5px}.mb{margin-bottom:12px}.flex{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.footnote{font-size:11px;line-height:1.8;color:#8a9cac;margin-top:17px}.stats{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.stat{background:#f7fbff;border-radius:13px;padding:12px 15px;min-width:90px}.stat b{display:block;font-size:19px}.stat small{font-size:11px;color:#8093a5}.bottom{display:none}@media(max-width:980px){.app{grid-template-columns:80px 1fr}.side{padding:20px 7px}.logo{font-size:14px;text-align:center}.logo small{font-size:8px;letter-spacing:0}.nav button{font-size:12px;text-align:center;padding:13px 3px}.side-foot{display:none}.main{padding:20px}.grid2{grid-template-columns:1fr}}@media(max-width:670px){.app{display:block}.side{display:none}.main{padding:18px 15px 94px}.topline{margin:0 0 16px}.datepill{font-size:10px;padding:9px}.hero{padding:25px 21px;min-height:175px;border-radius:20px}.hero h1{font-size:25px}.hero p{font-size:12px}.cloud{font-size:51px;margin:0}.panel{padding:17px;border-radius:17px}.section-head h2{font-size:19px}.week{overflow-x:auto;grid-template-columns:repeat(7,105px);padding-bottom:5px}.masonry{grid-template-columns:1fr}.bottom{position:fixed;bottom:0;left:0;right:0;background:#ffffffed;backdrop-filter:blur(15px);border-top:1px solid var(--line);display:flex;justify-content:space-around;z-index:20;padding:8px 2px 19px}.bottom button{border:0;background:transparent;color:#7890a3;font-weight:700;font-size:11px;padding:8px}.bottom button.active{color:#3377b6}.draft{min-height:360px}}
-</style></head><body><div class="app"><aside class="side"><div class="logo">DAYEN <span style="color:#84b8e1">☁</span><small>CONTENT LAB</small></div><nav class="nav"><button data-view="today" class="active">✦ 오늘의 편집실</button><button data-view="week">▦ 주간 캘린더</button><button data-view="ideas">♡ 아이디어 보관함</button><button data-view="sources">⌕ 출처 라이브러리</button><button data-view="settings">⚙ 설정</button></nav><div class="side-foot"><b>MEDI AI LAB</b><div>Medical AI Scientist<br>Science Communicator<br>Founder · Dayen</div><hr style="border:0;border-top:1px solid #dfeafa"><span>한 가지 과학 이야기, 네 가지 콘텐츠.</span></div></aside><main class="main"><div class="topline"><div class="logo" style="font-size:17px">DAYEN <span style="color:#8bbde7">✳</span> CONTENT LAB</div><div class="datepill" id="todayDate"></div></div><section class="hero"><div><div class="eyebrow">YOUR SCIENCE CONTENT EDITOR</div><h1>오늘도, 과학을<br>세상과 연결해요.</h1><p>근거 중심 아이디어부터 플랫폼별 게시 초안까지.<br>하루에 하나씩, 지속 가능한 과학 커뮤니케이션.</p></div><div class="cloud" aria-hidden="true">☁️</div></section>
+</style></head><body><div class="app"><aside class="side"><div class="logo">DAYEN <span style="color:#84b8e1">☁</span><small>CONTENT LAB</small></div><nav class="nav"><button data-view="today" class="active">✦ 오늘의 편집실</button><button data-view="week">▦ 주간 캘린더</button><button data-view="ideas">♡ 아이디어 보관함</button><button data-view="sources">⌕ 출처 라이브러리</button><button data-view="settings">⚙ 설정</button></nav><div class="side-foot"><b>MEDI AI LAB</b><div>Medical AI Scientist<br>Science Communicator<br>Founder · Dayen</div><hr style="border:0;border-top:1px solid #dfeafa"><span>한 가지 과학 이야기, 네 가지 콘텐츠.</span></div></aside><main class="main"><div class="topline"><div class="logo" style="font-size:17px">DAYEN <span style="color:#8bbde7">✳</span> CONTENT LAB</div><div class="datepill" id="todayDate"></div></div><section class="hero"><div><div class="eyebrow">LIFE-FIRST SCIENCE CONTENT STUDIO</div><h1>내 일상에서 시작하는<br>오늘의 과학 질문.</h1><p>커피, 약봉투, 검진표, 운동, 가족의 건강까지.<br>공감되는 이야기로 시작하고 정확한 과학으로 답해요.</p></div><div class="cloud" aria-hidden="true">☁️</div></section>
 <section id="view-today"><div class="section-head"><h2>오늘의 콘텐츠 브리프</h2><span class="small" id="refreshed"></span></div><div class="grid2"><div class="panel"><div class="story-head"><span class="tag" id="pillar">MEDICAL AI</span><span class="tag mint" id="goal">신뢰 구축</span><span class="tag orange" id="topicKind">상시 주제</span></div><h3 id="topicTitle"></h3><p class="story-desc" id="topicDesc"></p><div class="stats"><div class="stat"><b id="scoreRelevance">5/5</b><small>브랜드 적합성</small></div><div class="stat"><b id="scoreEvidence">검증 전</b><small>근거 확인</small></div><div class="stat"><b id="effort">보통</b><small>예상 제작 난이도</small></div></div><div class="source" id="activeSource"></div><div class="buttons"><button class="btn primary" id="regen">↻ 다른 주제 추천</button><button class="btn" id="loadPaper">⌕ 실시간 논문 탐색</button><button class="btn" id="saveIdea">♡ 아이디어 저장</button></div></div><div class="panel"><div class="story-head"><span class="eyebrow">OMNICHANNEL STUDIO</span></div><h3>플랫폼별 게시 초안</h3><div class="pilltabs" id="tabs"></div><div class="infoLine mb"><span id="draftTime"></span><span id="draftStatus">로컬 초안</span></div><textarea class="draft" id="draft" aria-label="플랫폼 게시글 초안"></textarea><div class="buttons"><button class="btn primary" id="copyDraft">⧉ 문안 복사</button><button class="btn" id="saveDraft">저장</button><button class="btn" id="published">게시 완료 ✓</button></div><div class="footnote">모든 초안은 검토 후 게시하세요. 논문 제목·초록만으로 연구 결과를 단정하지 않습니다.</div></div></div><div class="section-head"><h2>이번 주 콘텐츠 흐름</h2><button class="btn" data-view="week">전체 캘린더 보기 →</button></div><div class="week" id="weekStrip"></div></section>
 <section id="view-week" class="hidden"><div class="section-head"><h2>이번 주 콘텐츠 캘린더</h2><span class="small">요일을 누르면 편집실에서 해당 주제를 볼 수 있습니다.</span></div><div class="week" id="weekFull"></div><div class="section-head"><h2>원소스 멀티유즈 체크리스트</h2></div><div class="panel" id="checklist"></div></section>
 <section id="view-ideas" class="hidden"><div class="section-head"><h2>아이디어 보관함</h2><span class="small" id="ideaCount"></span></div><div class="panel mb"><div class="flex"><input id="ideaInput" class="textinput" style="flex:1;min-width:170px" placeholder="아이디어 제목을 입력하세요"><button class="btn primary" id="addIdea">+ 아이디어 추가</button></div><div class="flex" style="margin-top:12px"><input id="ideaSearch" class="textinput" style="flex:1;min-width:170px" placeholder="아이디어 검색"><select id="ideaFilter" class="textinput" style="width:auto"><option value="all">전체 상태</option><option value="아이디어">아이디어</option><option value="작성 중">작성 중</option><option value="게시 완료">게시 완료</option></select></div></div><div class="masonry" id="ideaGrid"></div></section>
@@ -13,29 +13,470 @@
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const storeKey='dayen-content-lab-v1';
 const days=['일','월','화','수','목','금','토'];
-const cats=['과학자의 회고','의료 AI 산업','AI 신약개발','일상 속 과학','메이커의 개발일지','논문 팩트체크','과학자의 커리어'];
+const cats=["가족과 건강","카페인·수면·컨디션","약·영양제","건강검진 읽기","생활 속 의료 AI","과학 팩트체크","움직임·생활습관"];
 const db={
- 1:[{title:'AUC 0.90이면 임상에서도 잘 작동할까?',desc:'의료 AI의 성능 수치와 실제 환자 집단에서의 유용성은 다른 질문입니다. 외부 검증, 데이터 편향, 임상 워크플로를 점검하는 콘텐츠.',pillar:'의료 AI',audience:'의료인·연구자',goal:'전문성',query:'external validation clinical artificial intelligence'},
- {title:'좋은 의료 AI가 병원에 도입되지 못하는 이유',desc:'모델 정확도 외에도 사용자 경험, 책임 소재, 개인정보 보호, 기존 진료 과정과의 통합이 중요하다는 질문을 소개합니다.',pillar:'의료 AI',audience:'의료인·기획자',goal:'대화 유도',query:'artificial intelligence clinical implementation evaluation'},
- {title:'AI가 의사를 대체할까? 먼저 살펴볼 세 가지',desc:'AI 시스템의 적용 범위, 사람의 감독, 임상 근거라는 기준으로 기대와 한계를 나눠 설명합니다.',pillar:'의료 AI',audience:'일반 대중',goal:'인지도',query:'clinical artificial intelligence human oversight'}],
- 2:[{title:'AI 신약개발, 예측 다음에 필요한 것은?',desc:'분자 후보 추천, 생물학적 타당성, 실험 검증을 구분해 AI 기반 신약개발의 전체 흐름을 알기 쉽게 해설합니다.',pillar:'AI 신약개발',audience:'바이오 종사자',goal:'전문성',query:'artificial intelligence drug discovery experimental validation'},
- {title:'독성 예측 AI는 어디까지 믿을 수 있을까?',desc:'TOXSCREEN 개발자의 관점에서 데이터 분포, 외부 검증, 적용 가능 영역을 이야기합니다. 자체 성능은 검증 전이라고 명시합니다.',pillar:'AI 신약개발',audience:'연구자',goal:'B2B 신뢰',query:'in silico toxicity prediction external validation'},
- {title:'새로운 단백질 타깃을 찾는 AI의 역할',desc:'타깃 발굴과 작용 기전 검증을 구분하고 연구 논문을 읽는 체크리스트를 공유합니다.',pillar:'AI 신약개발',audience:'연구자',goal:'전문성',query:'machine learning target identification drug discovery'}],
- 3:[{title:'유전자에 위험 변이가 있으면 반드시 병에 걸릴까?',desc:'유전적 소인과 발병의 차이, 침투도와 환경 요인을 일반 독자에게 설명하는 교육 콘텐츠.',pillar:'생활 속 과학',audience:'일반 대중',goal:'도달',query:'genetic penetrance disease risk review'},
- {title:'건강기능식품 광고를 볼 때 확인할 세 가지',desc:'연구 대상, 비교군, 효과 크기를 확인하는 방법을 통해 일상적인 건강 정보의 품질을 판단합니다.',pillar:'생활 속 과학',audience:'일반 대중',goal:'신뢰',query:'dietary supplements evidence randomized trial review'},
- {title:'상관관계가 원인이라는 뜻은 아니다',desc:'과학 기사에서 흔히 혼동하는 상관관계와 인과관계를 쉬운 일상 예시로 구분합니다.',pillar:'생활 속 과학',audience:'일반 대중',goal:'교육',query:'causal inference observational studies health'}],
- 4:[{title:'논문을 제품 아이디어로 바꾸는 개발자의 노트',desc:'MEDI AI LAB이 임상 문제 정의부터 프로토타입, 검증 계획을 만드는 과정을 개발일지로 공유합니다.',pillar:'과학자 창업',audience:'창업가·개발자',goal:'관계 구축',query:'clinical ai product development implementation'},
- {title:'TOXSCREEN 개발일지: 검증 계획부터 짜는 이유',desc:'독성 예측 모델 개발 과정에서 실험 결과 확보, 외부 데이터셋 분리, 적용 범위 정의가 왜 필요한지 설명합니다. 연구개발 중으로 표기합니다.',pillar:'과학자 창업',audience:'바이오 연구자',goal:'신뢰',query:'computational toxicology validation methods'},
- {title:'MEDI GUIDE 개발일지: 사용자부터 이해하기',desc:'복약지도 웹앱을 구상하고 설계할 때 환자·의료진의 정보 요구를 어떻게 나누어 보는지 공유합니다. 서비스 개발 중으로 표기합니다.',pillar:'과학자 창업',audience:'디지털헬스',goal:'브랜드',query:'medication adherence digital health usability'}],
- 5:[{title:'이번 주 의료 AI 논문, 무엇부터 검증할까?',desc:'논문 한 편의 연구 설계, 표본 특성, 검증 방식, 한계를 4가지 질문으로 리뷰하는 금요일 콘텐츠.',pillar:'의료 AI',audience:'연구자·의료인',goal:'전문성',query:'artificial intelligence medicine validation systematic review'},
- {title:'사전출판 논문을 읽을 때 주의할 점',desc:'동료심사 여부와 실제 임상 적용 가능성을 혼동하지 않도록 출판 단계부터 점검합니다.',pillar:'생활 속 과학',audience:'연구자·대중',goal:'신뢰',query:'medical preprints peer review evidence'},
- {title:'의료 AI 논문에서 놓치기 쉬운 데이터 누수',desc:'학습·검증 데이터 분리와 환자 수준 중복이 결과를 어떻게 왜곡할 수 있는지 사례 중심으로 설명합니다.',pillar:'의료 AI',audience:'의료 AI 개발자',goal:'전문성',query:'data leakage clinical machine learning'}],
- 6:[{title:'생명과학 박사가 AI 웹서비스를 만드는 과정',desc:'연구 경험을 바탕으로 웹개발·의료 AI 도구를 익힌 과정과 실습에서 배운 교훈을 솔직하게 공유합니다.',pillar:'과학자 성장',audience:'커리어 전환자',goal:'브랜드',query:'artificial intelligence science education'},
- {title:'논문을 쉽고 정확하게 설명하는 3단계',desc:'질문, 연구 방법, 한계를 구분하는 나만의 과학 커뮤니케이션 프로세스를 시연합니다.',pillar:'과학자 성장',audience:'교육자·크리에이터',goal:'교육',query:'science communication audience engagement'},
- {title:'연구자의 기술을 사업에 적용할 때 달라지는 것',desc:'과학적 엄밀함과 사용자 관찰을 함께 가져가는 창업 과정을 경험 중심으로 풀어봅니다.',pillar:'과학자 성장',audience:'창업가',goal:'브랜드',query:'scientist entrepreneurship research translation'}],
- 0:[{title:'과학을 읽는 일주일: 이번 주 남은 질문',desc:'이번 주 다룬 의료 AI·바이오 이슈에서 아직 답하지 못한 질문 세 개를 정리하고 다음 주 예고로 연결합니다.',pillar:'주간 회고',audience:'전체 팔로워',goal:'커뮤니티',query:'science communication research trust'},
- {title:'이번 주, 나는 어떤 기술을 배웠을까?',desc:'연구·개발·강연 과정에서 배운 개념 하나를 실제 사례와 연결해 공유하는 회고 콘텐츠.',pillar:'과학자 성장',audience:'커리어 전환자',goal:'유대',query:'medical ai education review'},
- {title:'독자가 묻는 의료 AI 질문에 답합니다',desc:'댓글에서 받은 질문을 모아 검증 가능한 연구 질문과 아직 불확실한 부분을 분리합니다.',pillar:'생활 속 과학',audience:'일반 대중',goal:'참여',query:'artificial intelligence healthcare public attitudes'}]
+ "0": [
+  {
+   "title": "부모님 건강검진표, 숫자 대신 무엇을 물어볼까?",
+   "desc": "가족에게 결과를 설명할 때 주의할 점을 다룹니다.",
+   "takeaway": "검진표는 수치 하나보다 증상·추적 검사·의료진 설명을 함께 봐야 합니다.",
+   "action": "가족과 함께 '추가로 확인할 것이 있나요?' 질문을 준비해 보세요.",
+   "caution": "타인의 수치만 보고 질환을 추정하지 마세요.",
+   "reference": {
+    "title": "MedlinePlus | Interpreting lab results",
+    "url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "interpreting routine health checkup results",
+   "pillar": "가족과 건강",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "부모님 약봉투, 사진만 보고 관리해도 될까?",
+   "desc": "약 이름과 복용법을 기록할 때 실수하기 쉬운 점을 짚습니다.",
+   "takeaway": "중복 성분과 실제 복용 시간·용량 확인이 중요합니다.",
+   "action": "약·영양제 목록과 변경 날짜를 함께 정리하세요.",
+   "caution": "약을 임의로 중단하거나 변경하도록 조언하지 마세요.",
+   "reference": {
+    "title": "FDA | Drug interactions",
+    "url": "https://www.fda.gov/drugs/resources-drugs/drug-interactions-what-you-should-know",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "medication reconciliation older adults",
+   "pillar": "가족과 건강",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "냉장고 속 영양제, 유통기한만 보면 될까?",
+   "desc": "영양제 선택과 보관을 넘어서 복용 목적부터 묻습니다.",
+   "takeaway": "영양제가 필요하다는 광고와 개인에게 실제로 필요한지는 다른 문제입니다.",
+   "action": "현재 복용 이유와 성분, 의사·약사의 권고 여부를 적어 보세요.",
+   "caution": "성분·개인상태 확인 없이 복용을 권장하지 마세요.",
+   "reference": {
+    "title": "NIH ODS | Dietary supplements",
+    "url": "https://ods.od.nih.gov/factsheets/WYNTK-Consumer/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "dietary supplement safety labeling",
+   "pillar": "가족과 건강",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "이번 주 실천할 건강 습관, 단 하나를 고른다면?",
+   "desc": "완벽한 루틴보다 지속 가능한 작은 실천을 이야기합니다.",
+   "takeaway": "수면 시각, 걷기, 약물 확인 등 바꿀 수 있는 행동에서 출발합니다.",
+   "action": "한 가지 행동만 정하고 일주일 동안 체크해 보세요.",
+   "caution": "사람마다 적합한 실천 목표가 다릅니다.",
+   "reference": {
+    "title": "CDC | About Sleep",
+    "url": "https://www.cdc.gov/sleep/about/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "healthy habits sleep regularity",
+   "pillar": "가족과 건강",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  }
+ ],
+ "1": [
+  {
+   "title": "오후 커피 한 잔, 밤잠에 영향을 줄까?",
+   "desc": "커피를 마신 시간·양·개인차를 따져보는 생활 속 카페인 이야기.",
+   "takeaway": "카페인은 각성 효과가 있으며 수면을 방해할 수 있고 민감도는 개인별로 다릅니다.",
+   "action": "일주일간 마지막 카페인 섭취 시간과 잠드는 시간을 함께 기록해 보세요.",
+   "caution": "모든 사람에게 적용되는 카페인 마감 시각이나 안전량을 단정하지 마세요.",
+   "reference": {
+    "title": "FDA | Caffeine safety",
+    "url": "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "caffeine sleep timing",
+   "pillar": "생활 속 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "7시간 잤는데도 피곤하다면 뭘 봐야 할까?",
+   "desc": "수면 시간만으로 판단하기 어려운 수면의 질을 다룹니다.",
+   "takeaway": "수면은 총시간뿐 아니라 규칙성·질도 중요합니다.",
+   "action": "기상 시각, 중간 각성, 낮 졸림을 며칠 기록해 보세요.",
+   "caution": "지속적이고 심한 피로는 개인의 건강상태를 확인해야 하며 자가진단하지 마세요.",
+   "reference": {
+    "title": "CDC | About Sleep",
+    "url": "https://www.cdc.gov/sleep/about/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "sleep quality adults",
+   "pillar": "생활 속 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "주말에 몰아서 자면 평일 잠이 해결될까?",
+   "desc": "늦잠과 수면 리듬을 누구나 겪는 월요일 경험으로 설명합니다.",
+   "takeaway": "기상·취침 시각을 일정하게 유지하는 것이 수면 습관에 도움이 됩니다.",
+   "action": "이번 주는 주말을 포함해 기상 시각의 차이를 관찰해 보세요.",
+   "caution": "주말 수면이 모두 해롭다는 식의 단순화는 피하세요.",
+   "reference": {
+    "title": "NIH NHLBI | Healthy sleep habits",
+    "url": "https://www.nhlbi.nih.gov/health/sleep-deprivation/healthy-sleep-habits",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "social jetlag weekend catchup sleep",
+   "pillar": "생활 속 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "책상 앞에서 멍할 때 10분 걷기는 의미 있을까?",
+   "desc": "바쁜 직장인이 할 수 있는 짧은 움직임부터 출발합니다.",
+   "takeaway": "일상 속 작은 신체활동도 건강에 의미가 있습니다.",
+   "action": "회의 사이 짧은 걷기를 기록하고 몸 상태의 변화를 관찰해 보세요.",
+   "caution": "걷기가 특정 질환을 치료한다고 주장하지 마세요.",
+   "reference": {
+    "title": "CDC | Physical activity benefits",
+    "url": "https://www.cdc.gov/physical-activity-basics/benefits/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "short bouts physical activity",
+   "pillar": "생활 속 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  }
+ ],
+ "2": [
+  {
+   "title": "영양제 3개, 한꺼번에 먹어도 괜찮을까?",
+   "desc": "비타민·허브·처방약을 동시에 복용할 때 확인할 사항을 이야기합니다.",
+   "takeaway": "영양제도 성분과 복용량에 따라 약물과 상호작용할 수 있습니다.",
+   "action": "복용 중인 약과 영양제의 성분표를 한 번에 정리해 약사나 의료진에게 확인하세요.",
+   "caution": "개인의 약 목록 없이 안전한 조합을 판정하지 마세요.",
+   "reference": {
+    "title": "NIH ODS | Dietary supplements",
+    "url": "https://ods.od.nih.gov/factsheets/WYNTK-Consumer/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "dietary supplements interactions medicines",
+   "pillar": "생활 속 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "감기약 두 종류, 같이 먹어도 될까?",
+   "desc": "상품명보다 중복 성분이 중요한 이유를 생활 사례로 풀어봅니다.",
+   "takeaway": "일반의약품도 서로 겹치는 성분이 있을 수 있습니다.",
+   "action": "구매 전 두 제품의 유효성분과 복용 지침을 대조해 보세요.",
+   "caution": "임의로 복용량을 조절하거나 환자별 처방을 내리지 마세요.",
+   "reference": {
+    "title": "FDA | OTC medicines",
+    "url": "https://www.fda.gov/drugs/understanding-over-counter-medicines/over-counter-medicines-whats-right-you",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "over the counter duplicate ingredients",
+   "pillar": "생활 속 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "약은 꼭 식후 30분에 먹어야 할까?",
+   "desc": "약마다 다른 복용법을 읽는 습관에 관한 콘텐츠입니다.",
+   "takeaway": "모든 약을 동일한 식후 시간 규칙으로 복용하지는 않습니다.",
+   "action": "약 봉투의 복용법을 우선 확인하고 불명확하면 약사에게 문의하세요.",
+   "caution": "특정 약 이름 없이 음식과의 상호작용을 일반화하지 마세요.",
+   "reference": {
+    "title": "FDA | Drug interactions",
+    "url": "https://www.fda.gov/drugs/resources-drugs/drug-interactions-what-you-should-know",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "medicine food timing interaction",
+   "pillar": "생활 속 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "감기인데 항생제를 먹으면 더 빨리 나을까?",
+   "desc": "감기와 세균 감염을 혼동하지 않도록 하는 팩트체크입니다.",
+   "takeaway": "일반적인 바이러스성 감기에는 항생제가 도움이 되지 않습니다.",
+   "action": "감기 증상만으로 항생제를 요구하기보다 진료 시 원인과 필요성을 물어보세요.",
+   "caution": "세균성 합병증이 의심되는 상황은 진료 판단이 필요합니다.",
+   "reference": {
+    "title": "CDC | Common cold treatment",
+    "url": "https://www.cdc.gov/common-cold/treatment/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "antibiotics common cold viral",
+   "pillar": "생활 속 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  }
+ ],
+ "3": [
+  {
+   "title": "건강검진 ALT가 높으면 간이 나쁘다는 뜻일까?",
+   "desc": "검진표에서 자주 마주치는 간효소 수치를 해석하는 기본 원칙입니다.",
+   "takeaway": "ALT 상승은 간 상태를 살펴볼 단서지만 이 수치 하나가 진단은 아닙니다.",
+   "action": "검진표의 기준 범위와 다른 간 관련 검사, 약물·운동력 등을 함께 확인하세요.",
+   "caution": "높은 수치를 원인 진단이나 개인별 치료 조언으로 단정하지 마세요.",
+   "reference": {
+    "title": "MedlinePlus | ALT blood test",
+    "url": "https://medlineplus.gov/lab-tests/alt-blood-test/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "ALT blood test interpretation",
+   "pillar": "생활 속 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "건강검진 수치가 ‘정상’이면 모든 게 괜찮을까?",
+   "desc": "참고범위와 건강 상태 사이의 차이를 설명합니다.",
+   "takeaway": "한 가지 검사의 정상 범위가 모든 질환의 부재를 의미하지 않습니다.",
+   "action": "수치의 추세, 증상, 검사 목적을 함께 보는 질문을 준비하세요.",
+   "caution": "정상 결과를 무시하거나 모든 사람에게 추가 검사를 권하지 마세요.",
+   "reference": {
+    "title": "MedlinePlus | Interpreting lab results",
+    "url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "reference interval laboratory tests",
+   "pillar": "생활 속 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "유전자 검사에서 ‘위험 높음’, 꼭 병에 걸릴까?",
+   "desc": "확률과 확정 진단이 어떻게 다른지 쉬운 예시로 설명합니다.",
+   "takeaway": "질병 위험의 증가는 발병 확정을 뜻하지 않습니다.",
+   "action": "위험 표시가 어떤 변이·집단·알고리즘을 기반으로 했는지 살펴보세요.",
+   "caution": "직접 소비자 유전자 검사 결과를 임상 진단처럼 해석하지 마세요.",
+   "reference": {
+    "title": "MedlinePlus Genetics | DTC test results",
+    "url": "https://medlineplus.gov/genetics/understanding/dtcgenetictesting/dtcresults/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "direct to consumer genetic testing risk interpretation",
+   "pillar": "생활 속 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "건강검진표에 빨간 숫자 하나, 당장 걱정해야 할까?",
+   "desc": "정상범위 바깥 숫자 하나를 발견했을 때의 올바른 질문입니다.",
+   "takeaway": "검사 결과는 표본 상태와 임상 맥락을 고려해 해석해야 합니다.",
+   "action": "이전 검사 결과와 현재 증상, 약 복용 여부를 정리하세요.",
+   "caution": "검사 수치만으로 긴급성을 판정할 수 없으며 우려 시 의료진과 상담해야 합니다.",
+   "reference": {
+    "title": "MedlinePlus | Interpreting lab results",
+    "url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "abnormal blood test results context",
+   "pillar": "생활 속 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  }
+ ],
+ "4": [
+  {
+   "title": "내 건강검진표를 AI 챗봇에 올려도 될까?",
+   "desc": "AI가 편리해도 개인 건강정보는 먼저 확인해야 한다는 이야기입니다.",
+   "takeaway": "건강 데이터를 업로드하기 전에는 서비스의 개인정보 처리 조건을 점검해야 합니다.",
+   "action": "이름·생년월일·환자번호 등 식별정보를 가리고, 저장·학습·공유 정책을 확인하세요.",
+   "caution": "특정 AI 서비스의 보안 수준을 확인 없이 보장하지 마세요.",
+   "reference": {
+    "title": "MedlinePlus | Interpreting lab results",
+    "url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "personal health information AI chatbot privacy",
+   "pillar": "생활 속 의료 AI",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "AI가 건강검진 결과를 설명하면 진단일까?",
+   "desc": "설명 보조 도구와 실제 의료적 판단의 차이를 비교합니다.",
+   "takeaway": "AI의 설명은 진단 결과와 같지 않으며 검사 맥락 검토가 필요합니다.",
+   "action": "AI 답변에서 검사명·단위·참고범위를 먼저 대조해 보세요.",
+   "caution": "AI의 답변만으로 진료나 약 복용을 바꾸지 마세요.",
+   "reference": {
+    "title": "MedlinePlus | Interpreting lab results",
+    "url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "large language models lab test interpretation",
+   "pillar": "생활 속 의료 AI",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "의료 AI ‘정확도 95%’, 내게도 맞을까?",
+   "desc": "헤드라인의 숫자보다 검증 집단을 먼저 보자는 콘텐츠입니다.",
+   "takeaway": "평가에 사용한 대상·지표·실제 사용 환경을 함께 봐야 합니다.",
+   "action": "보도자료를 보면 '누구를 대상으로 검증했나요?'부터 질문해 보세요.",
+   "caution": "가상의 숫자는 예시로만 사용하며 임상 효과로 해석하지 마세요.",
+   "reference": {
+    "title": "MedlinePlus | Interpreting lab results",
+    "url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "external validation clinical AI performance",
+   "pillar": "생활 속 의료 AI",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "스마트워치 수면 점수, 그대로 믿어도 될까?",
+   "desc": "기기 지표와 몸의 컨디션이 다를 때 생각해 볼 점을 다룹니다.",
+   "takeaway": "소비자 기기의 점수는 의료 진단과 다릅니다.",
+   "action": "일주일 동안 점수와 실제 졸림·중간 각성을 함께 기록해 보세요.",
+   "caution": "특정 기기의 검증 성능이나 진단 능력을 확인 없이 주장하지 마세요.",
+   "reference": {
+    "title": "CDC | About Sleep",
+    "url": "https://www.cdc.gov/sleep/about/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "wearable sleep trackers accuracy",
+   "pillar": "생활 속 의료 AI",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  }
+ ],
+ "5": [
+  {
+   "title": "‘면역력 2배’라는 건강식품 광고, 믿어도 될까?",
+   "desc": "광고의 숫자와 실제 연구 방법 사이를 살펴봅니다.",
+   "takeaway": "제품 광고 문구를 이해하려면 연구 대상·비교군·효과의 크기부터 확인해야 합니다.",
+   "action": "광고의 출처로 제시된 연구가 사람 대상인지 찾아보세요.",
+   "caution": "여러 다른 연구의 결과를 해당 제품의 효과로 연결하지 마세요.",
+   "reference": {
+    "title": "NIH ODS | Dietary supplements",
+    "url": "https://ods.od.nih.gov/factsheets/WYNTK-Consumer/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "dietary supplement evidence randomized trials",
+   "pillar": "과학 팩트체크",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "‘논문으로 증명된 영양제’라는 말의 함정",
+   "desc": "논문이 존재한다는 사실과 제품의 확정적 효능은 다릅니다.",
+   "takeaway": "논문의 연구 설계와 실제 사용 제품의 성분·용량을 따져야 합니다.",
+   "action": "논문 제목뿐 아니라 연구 대상·용량·대조군을 체크해 보세요.",
+   "caution": "동물·세포 실험 결과를 사람의 치료 효과로 확대하지 마세요.",
+   "reference": {
+    "title": "NIH ODS | Dietary supplements",
+    "url": "https://ods.od.nih.gov/factsheets/WYNTK-Consumer/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "supplement clinical evidence",
+   "pillar": "과학 팩트체크",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "가짜 과학뉴스, 제목만 보고 알아차릴 수 있을까?",
+   "desc": "과장된 제목을 걸러내는 세 가지 질문입니다.",
+   "takeaway": "'모든 사람' '완치' '100%' 같은 표현은 검증이 필요합니다.",
+   "action": "원문 링크·연구 규모·연구의 한계를 확인하세요.",
+   "caution": "단순 표현만으로 기사 전체가 허위라고 단정하지 마세요.",
+   "reference": {
+    "title": "MedlinePlus | Interpreting lab results",
+    "url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "health misinformation fact checking science",
+   "pillar": "과학 팩트체크",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "‘무조건 1만 보’가 건강의 기준일까?",
+   "desc": "만보기 숫자에 대한 부담을 덜고 활동량을 이해합니다.",
+   "takeaway": "활동량은 권장되는 강도와 시간도 중요하며 1만 보만이 유일한 목표는 아닙니다.",
+   "action": "일단 지난주보다 덜 앉고 더 걷는 작은 변화를 관찰해 보세요.",
+   "caution": "개인 건강상태에 관계없이 동일 운동량을 강요하지 마세요.",
+   "reference": {
+    "title": "CDC | Adult physical activity guideline",
+    "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "steps per day health physical activity",
+   "pillar": "과학 팩트체크",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  }
+ ],
+ "6": [
+  {
+   "title": "운동할 시간이 30분도 없다면 어떻게 시작할까?",
+   "desc": "주말에라도 시작하고 싶은 사람의 생활 패턴을 다룹니다.",
+   "takeaway": "짧은 신체활동을 더하는 것에도 건강상 의미가 있습니다.",
+   "action": "집 근처 걷기부터 시작해 일주일의 활동 시간을 기록해 보세요.",
+   "caution": "통증이나 질환이 있으면 운동 강도·종류는 개인에 맞게 조절해야 합니다.",
+   "reference": {
+    "title": "CDC | Adult physical activity guideline",
+    "url": "https://www.cdc.gov/physical-activity-basics/guidelines/adults.html/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "physical activity short bouts benefits",
+   "pillar": "몸과 일상의 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "하루 종일 앉아 있는 사람, 가장 작은 변화는?",
+   "desc": "재택근무와 연구실 생활에 공통으로 적용할 이야기입니다.",
+   "takeaway": "앉아 있는 시간을 줄이고 몸을 움직이는 것은 유익합니다.",
+   "action": "일 중간에 일어나 움직이는 시간을 정해 보세요.",
+   "caution": "특정 움직임이 만성질환을 예방한다고 단정하지 마세요.",
+   "reference": {
+    "title": "CDC | Physical activity benefits",
+    "url": "https://www.cdc.gov/physical-activity-basics/benefits/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "sedentary behavior movement benefits",
+   "pillar": "몸과 일상의 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "커피 대신 에너지드링크, 카페인은 얼마나 다를까?",
+   "desc": "음료 이름보다 총 카페인 함량을 비교합니다.",
+   "takeaway": "카페인 함량은 제품별·용량별로 차이가 큽니다.",
+   "action": "라벨에서 1회 제공량과 카페인 총량을 같이 확인하세요.",
+   "caution": "개인의 건강조건에 관계없이 허용량을 권장하지 마세요.",
+   "reference": {
+    "title": "FDA | Caffeine safety",
+    "url": "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "energy drinks caffeine content",
+   "pillar": "몸과 일상의 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  },
+  {
+   "title": "잠들기 전 스마트폰, 무엇이 문제일까?",
+   "desc": "스크린 사용과 수면 습관을 실생활에 연결합니다.",
+   "takeaway": "잠들기 전 전자기기 사용을 줄이는 것은 권장되는 수면 습관 중 하나입니다.",
+   "action": "이번 주 사흘만 취침 30분 전 알림을 꺼 보고 차이를 관찰하세요.",
+   "caution": "단 한 번의 실험 결과로 건강효과를 증명했다고 주장하지 마세요.",
+   "reference": {
+    "title": "CDC | About Sleep",
+    "url": "https://www.cdc.gov/sleep/about/",
+    "kind": "공공기관 안내자료"
+   },
+   "query": "smartphone screen bedtime sleep",
+   "pillar": "몸과 일상의 과학",
+   "audience": "일반 대중",
+   "goal": "일상에서 쓰는 과학"
+  }
+ ]
 };
 const platformList=['Threads','LinkedIn','Instagram','YouTube Shorts'];
 const suggestedTime={'Threads':'08:30','LinkedIn':'09:00','Instagram':'19:00','YouTube Shorts':'20:00'};
@@ -46,31 +487,73 @@ const today=Seoul();
 const dayNum=iso=>new Date(iso+'T12:00:00Z').getUTCDay();
 const shiftDate=(iso,n)=>{let d=new Date(iso+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)};
 const weekStart=shiftDate(today,-((dayNum(today)+6)%7));
-let currentDate=today,currentIndex=Number(state.indexes?.[today]||0),platform='Threads',view='today';
+const rotationIndex=iso=>Math.abs(Math.floor(Date.parse(iso+'T00:00:00Z')/604800000))%db[dayNum(iso)].length;
+let currentDate=today,currentIndex=Number(state.indexes?.[today]??rotationIndex(today)),platform='Threads',view='today';
 let retrieved=null;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateFull=iso=>`${Number(iso.slice(5,7))}월 ${Number(iso.slice(8))}일 (${days[dayNum(iso)]})`;
 const sSave=()=>localStorage.setItem(storeKey,JSON.stringify(state));
 function toast(s){$('#toast').textContent=s;$('#toast').classList.add('show');setTimeout(()=>$('#toast').classList.remove('show'),2200)}
-function activeTopic(){const d=dayNum(currentDate),set=db[d],idx=currentIndex%set.length;const t={...set[idx]};if(retrieved && retrieved.date===currentDate && retrieved.index===currentIndex){return {...t,title:retrieved.title,desc:'학술 데이터베이스에서 논문 메타데이터를 조회했습니다. 연구의 방법·결과·한계는 원문을 확인한 뒤 정확히 작성하세요.',source:retrieved,pillar:'논문 탐색',goal:'연구 리뷰'}}return t}
-function compose(t,platformName){const evidence=t.source?`${t.source.title} · ${t.source.author||'저자 확인 필요'} · ${t.source.year||'연도 확인 필요'} · ${t.source.url}`:'원문·근거 확인 전 — 게시 전 해당 주장에 맞는 논문과 출처 링크를 추가하세요.';
-const lines={
-'Threads':`🧬 ${t.title}\n\n의료 AI 연구자이자 개발자로서 이 질문을 자주 생각해요.\n\n① 우리가 정말 확인하려는 것은 무엇일까요?\n② 연구 설계와 검증 방식은 적절했을까요?\n③ 현실에 적용할 때 어떤 한계가 있을까요?\n\n${t.desc}\n\n여러분은 어느 부분이 가장 궁금하신가요?\n\n📚 근거: ${evidence}\n\n자세한 연구 해설은 LinkedIn에서 이어갑니다. #과학커뮤니케이션 #의료AI #데이엔`,
-'LinkedIn':`[DAYEN | 과학을 읽고, AI로 구현하다]\n\n${t.title}\n\n${t.desc}\n\n의료 AI와 바이오 연구를 평가할 때는 흥미로운 제목이나 하나의 숫자보다 검증 과정 자체를 살펴봐야 합니다.\n\n1. 연구 질문: 무엇을 예측하거나 설명하려 했는가?\n2. 연구 설계: 어떤 데이터와 비교 기준을 사용했는가?\n3. 근거의 범위: 연구 결과를 누구에게, 어느 환경까지 일반화할 수 있는가?\n4. 현실 적용: 독립적인 외부 검증과 현장 평가가 필요한가?\n\n※ 아직 확인하지 않은 연구 결과나 수치를 임의로 단정해서는 안 됩니다. 원문을 읽고 이 부분에 실제 수치와 한계를 보강해 주세요.\n\n출처: ${evidence}\n\n여러분은 이 분야에서 어떤 검증 질문을 먼저 던지시나요?\n\n#MedicalAI #ScienceCommunication #DigitalHealth #MEDI_AI_LAB`,
-'Instagram':`[인스타그램 6장 카드뉴스 콘티]\n\n1/6 커버: ${t.title}\n2/6 왜 중요할까? — ${t.desc}\n3/6 개념을 그림으로: 연구 질문과 실제 문제 정의\n4/6 논문 읽는 법: 연구 대상·비교 기준·검증 데이터 확인\n5/6 주의할 점: 확인되지 않은 결과는 단정하지 않기\n6/6 결론: "좋은 과학 질문은 더 정확한 답을 만듭니다" + 저장 CTA\n\n[디자인] 네이비 헤드라인, 파스텔 하늘색 배경, 민트 포인트, 1장 1메시지, 작은 출처 각주\n\n[캡션]\n오늘의 과학 질문은 "${t.title}" 입니다. ${t.desc} 궁금한 점은 댓글로 남겨주세요.\n\n🔗 출처: ${evidence}\n#과학커뮤니케이터 #과학상식 #의료AI #메디아이랩`,
-'YouTube Shorts':`[쇼츠 45초 스크립트]\n\n0–4초 | 훅 (카메라 정면)\n"${t.title}"\n\n5–15초 | 질문 배경 (텍스트 카드)\n"${t.desc}"\n\n16–30초 | 핵심 원리 (간단한 도식)\n"연구에서는 질문, 연구 방법, 검증 집단을 분리해서 확인해야 해요. 흥미로운 결과라고 해서 모든 상황에 그대로 적용되는 것은 아니니까요."\n\n31–40초 | 한계 (연구 논문 클로즈업)\n"그래서 저는 원문에서 연구 설계와 한계를 꼭 확인합니다."\n\n41–45초 | CTA\n"여러분이 궁금한 과학 질문도 댓글로 남겨주세요."\n\n[화면자막] #의료AI #과학읽기 #데이엔\n[자료 확인] ${evidence}`};return lines[platformName]}
+function activeTopic(){const d=dayNum(currentDate),set=db[d],idx=currentIndex%set.length;const t={...set[idx]};if(retrieved && retrieved.date===currentDate && retrieved.index===currentIndex){return {...t,source:retrieved}}return t}
+
+function compose(t,platformName){
+ const evidence=t.source?'추가 논문 메타데이터: '+t.source.title+' / '+(t.source.author||'저자 확인 필요')+' / '+t.source.url+' (원문 내용 미검증)':(t.reference?t.reference.title+' — '+t.reference.url+' (공식 안내자료, 개별 논문의 직접 검증 아님)':'게시 전 원문 검증 필요');
+ const one=t.title, explanation=t.desc, conclusion=t.takeaway||t.desc, tryIt=t.action||'생활에서 관찰할 수 있는 한 가지 행동을 골라 보세요.', caveat=t.caution||'개인마다 상황이 다를 수 있습니다.';
+ if(platformName==='Threads') return [
+ '🔬 '+one,'',explanation,'','✔ 알아두면 좋은 점: '+conclusion,
+ '✔ 오늘 해볼 일: '+tryIt,'','단, '+caveat,
+ '','이런 경험 해보셨나요? 댓글로 알려주세요.',
+ '📌 더 자세한 근거와 한계는 LinkedIn에서 풀어볼게요.','📚 '+evidence,
+ '#생활속과학 #과학커뮤니케이터 #데이엔'
+ ].join('\\n');
+ if(platformName==='LinkedIn') return [
+ '[DAYEN | 일상의 질문을 과학으로 읽다]','','"'+one+'"','',
+ explanation,'','이 주제가 중요한 이유는 생활에서 쉽게 마주치지만 설명을 잘못 이해하기 쉽기 때문입니다.',
+ '','■ 핵심 과학: '+conclusion,
+ '','■ 오늘의 체크리스트: '+tryIt,
+ '','■ 해석의 한계: '+caveat,
+ '','■ 근거 자료: '+evidence,
+ '','※ 안내자료와 연구논문은 다릅니다. 개별 수치·인과관계를 단정하려면 원문 연구 설계와 한계를 추가 확인해야 합니다.',
+ '','여러분은 이 주제에서 가장 궁금한 것이 무엇인가요?',
+ '','#ScienceCommunication #생활속과학 #MedicalAI #DAYEN'
+ ].join('\\n');
+ if(platformName==='Instagram') return [
+ '[인스타그램 6장 카드뉴스 구성]','',
+ '1/6 표지 — '+one,
+ '2/6 우리 생활 장면 — '+explanation,
+ '3/6 팩트 한 줄 — '+conclusion,
+ '4/6 따라 해보기 — '+tryIt,
+ '5/6 꼭 알아둘 예외 — '+caveat,
+ '6/6 저장할 한 줄 — “오늘 내 생활에서 하나만 확인해 보세요” + 댓글 질문',
+ '','[비주얼] 실생활 사진 느낌의 상황 일러스트 + 파스텔 블루/네이비. 각 장은 한 가지 메시지.',
+ '','[캡션] '+one+' '+conclusion+' 오늘은 '+tryIt+' 개인별 차이: '+caveat,
+ '','[출처/각주] '+evidence,'#생활속과학 #과학상식 #데이엔'
+ ].join('\\n');
+ return [
+ '[45초 Shorts / Reels 구성]','',
+ '00–05초 | 손에 커피·검진표·약봉투 같은 실물 소품을 들고 질문',
+ '“'+one+'”',
+ '','06–15초 | 주변 사례','“'+explanation+'”',
+ '','16–27초 | 핵심 설명(자막 1줄 + 간단 도식)','“'+conclusion+'”',
+ '','28–37초 | 오늘의 실천','“'+tryIt+'”',
+ '','38–42초 | 예외·안전','“다만 '+caveat+'”',
+ '','43–45초 | CTA','“이런 생활 속 과학, 다음엔 뭘 알아볼까요?”',
+ '','[영상자료] '+evidence,
+ '[자막] 한 화면 한 문장, 근거와 제작일 표시'
+ ].join('\\n');
+}
 function draftKey(){return `${currentDate}|${currentIndex}|${platform}`}
 function getDraft(){return Object.hasOwn(state.drafts,draftKey())?state.drafts[draftKey()]:compose(activeTopic(),platform)}
-function dateRestore(){currentIndex=Number(state.indexes?.[currentDate]||0);retrieved=null}
-function renderStory(){const t=activeTopic();$('#topicTitle').textContent=t.title;$('#topicDesc').textContent=t.desc;$('#pillar').textContent=t.pillar;$('#goal').textContent=t.goal;$('#topicKind').textContent=t.source?'실시간 메타데이터':'상시 주제';$('#scoreRelevance').textContent=t.source?'5/5':'4/5';$('#scoreEvidence').textContent=t.source?'메타확인':'확인 전';$('#effort').textContent=t.source?'높음':'보통';$('#refreshed').textContent=`${dateFull(currentDate)} · ${cats[dayNum(currentDate)]}`;
-const src=t.source;$('#activeSource').innerHTML=src?`<strong>조회된 학술 출처 — 결과·원문은 별도 확인</strong><div>${esc(src.title)}</div><div>${esc(src.author)} · ${esc(src.year)} · ${esc(src.journal)}</div><div class="live">메타데이터 조회: ${esc(src.fetchedAt)} / 원문 검토: 미완료</div><a target="_blank" rel="noopener noreferrer" href="${esc(src.url)}">논문 원문·서지 확인 ↗</a>`:`<strong>게시 전 근거 확인 필요</strong><div class="unverified">이 주제는 상시 기획안입니다. 특정 논문의 결과를 인용하거나 오늘의 뉴스라고 표시하지 않습니다.</div><a href="https://europepmc.org/" target="_blank" rel="noopener noreferrer">Europe PMC에서 근거 논문 찾기 ↗</a>`;
+function dateRestore(){currentIndex=Number(state.indexes?.[currentDate]??rotationIndex(currentDate));retrieved=null}
+function renderStory(){const t=activeTopic();$('#topicTitle').textContent=t.title;$('#topicDesc').textContent=t.desc+'  • 오늘의 실천: '+(t.action||'');$('#pillar').textContent=t.pillar;$('#goal').textContent=t.goal;$('#topicKind').textContent=t.source?'출처 메타 조회':'생활 속 상시 주제';$('#scoreRelevance').textContent='생활 밀착';$('#scoreEvidence').textContent=t.source?'서지 확인':'공식 안내';$('#effort').textContent=t.source?'높음':'보통';$('#refreshed').textContent=`${dateFull(currentDate)} · ${cats[dayNum(currentDate)]}`;
+const src=t.source;$('#activeSource').innerHTML=src?`<strong>조회된 학술 출처 — 결과·원문은 별도 확인</strong><div>${esc(src.title)}</div><div>${esc(src.author)} · ${esc(src.year)} · ${esc(src.journal)}</div><div class="live">메타데이터 조회: ${esc(src.fetchedAt)} / 원문 검토: 미완료</div><a target="_blank" rel="noopener noreferrer" href="${esc(src.url)}">논문 원문·서지 확인 ↗</a>`:`<strong>생활 속 질문에 참고할 공식 자료</strong><div class="small">상시 주제 · 공식기관 안내자료이며 개별 연구의 원문 검증과는 다릅니다.</div><a href="${esc(t.reference?.url||'https://medlineplus.gov/')}" target="_blank" rel="noopener noreferrer">${esc(t.reference?.title||'MedlinePlus')} ↗</a><div style="margin-top:10px" class="unverified">주의: ${esc(t.caution||'개인별 상황을 확인해야 합니다.')}</div>`;
 renderDraft();renderWeek()}
 function renderDraft(){const tabs=$('#tabs');tabs.innerHTML=platformList.map(p=>`<button class="${p===platform?'active':''}" data-platform="${esc(p)}">${esc(p)}</button>`).join('');$('#draft').value=getDraft();$('#draftTime').textContent=`기본 게시 제안 ${suggestedTime[platform]} KST · 실제 최적 시간은 미검증`;$('#draftStatus').textContent=state.published?.[draftKey()]?'게시 완료 ✓':(state.drafts[draftKey()]?'수정본 로컬 저장':'편집 가능한 추천 초안');tabs.querySelectorAll('button').forEach(b=>b.onclick=()=>{platform=b.dataset.platform;renderDraft()})}
-function renderWeek(){const html=Array.from({length:7},(_,i)=>{const d=shiftDate(weekStart,i),day=dayNum(d),t=db[day][Number(state.indexes?.[d]||0)%db[day].length],published=platformList.every(p=>state.published?.[`${d}|${Number(state.indexes?.[d]||0)}|${p}`]);return `<button class="day ${currentDate===d?'selected':''} ${published?'done':''}" data-date="${d}"><span class="small">${days[day]}요일</span><strong>${Number(d.slice(8))}</strong><span class="tag ${published?'mint':''}">${published?'완료':esc(t.pillar)}</span><small style="margin-top:12px">${esc(t.title)}</small></button>`}).join('');$('#weekStrip').innerHTML=html;$('#weekFull').innerHTML=html;$$('[data-date]').forEach(b=>b.onclick=()=>{currentDate=b.dataset.date;dateRestore();renderStory();showView('today')});let done=platformList.filter(p=>state.published?.[`${currentDate}|${currentIndex}|${p}`]);$('#checklist').innerHTML=`<h3>${dateFull(currentDate)} · 작업 현황</h3>${platformList.map(p=>`<div class="setting"><label>${esc(p)}</label><span class="tag ${done.includes(p)?'mint':'orange'}">${done.includes(p)?'✓ 게시 완료':'초안 작성·검토 필요'}</span></div>`).join('')}<p class="footnote">'게시 완료'는 수동으로 표시한 상태이며 실제 SNS 자동 업로드와는 연결되지 않았습니다.</p>`}
+function renderWeek(){const html=Array.from({length:7},(_,i)=>{const d=shiftDate(weekStart,i),day=dayNum(d),t=db[day][Number(state.indexes?.[d]??rotationIndex(d))%db[day].length],published=platformList.every(p=>state.published?.[`${d}|${Number(state.indexes?.[d]??rotationIndex(d))}|${p}`]);return `<button class="day ${currentDate===d?'selected':''} ${published?'done':''}" data-date="${d}"><span class="small">${days[day]}요일</span><strong>${Number(d.slice(8))}</strong><span class="tag ${published?'mint':''}">${published?'완료':esc(t.pillar)}</span><small style="margin-top:12px">${esc(t.title)}</small></button>`}).join('');$('#weekStrip').innerHTML=html;$('#weekFull').innerHTML=html;$$('[data-date]').forEach(b=>b.onclick=()=>{currentDate=b.dataset.date;dateRestore();renderStory();showView('today')});let done=platformList.filter(p=>state.published?.[`${currentDate}|${currentIndex}|${p}`]);$('#checklist').innerHTML=`<h3>${dateFull(currentDate)} · 작업 현황</h3>${platformList.map(p=>`<div class="setting"><label>${esc(p)}</label><span class="tag ${done.includes(p)?'mint':'orange'}">${done.includes(p)?'✓ 게시 완료':'초안 작성·검토 필요'}</span></div>`).join('')}<p class="footnote">'게시 완료'는 수동으로 표시한 상태이며 실제 SNS 자동 업로드와는 연결되지 않았습니다.</p>`}
 function showView(v){view=v;$$('[id^="view-"]').forEach(x=>x.classList.add('hidden'));$('#view-'+v).classList.remove('hidden');$$('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===v));if(v==='ideas')renderIdeas();if(v==='sources')renderSources();if(v==='week')renderWeek();window.scrollTo({top:0,behavior:'smooth'})}
 function renderIdeas(){const needle=$('#ideaSearch').value.toLowerCase(),filter=$('#ideaFilter').value;let items=state.ideas.filter(x=>x.title.toLowerCase().includes(needle)&&(filter==='all'||x.status===filter));$('#ideaCount').textContent=`${state.ideas.length}개 저장됨`;$('#ideaGrid').innerHTML=items.length?items.map(x=>`<div class="idea"><span class="tag ${x.status==='게시 완료'?'mint':'pink'}">${esc(x.status)}</span><h4>${esc(x.title)}</h4><p>${esc(x.desc||'기획 중')}</p><div class="flex"><select class="textinput" data-status="${esc(x.id)}" style="width:auto">${['아이디어','작성 중','게시 완료'].map(s=>`<option ${x.status===s?'selected':''}>${s}</option>`).join('')}</select><button class="btn" data-delete="${esc(x.id)}">삭제</button></div></div>`).join(''):'<div class="panel small">저장한 아이디어가 없습니다. 오늘의 추천 주제를 저장해 보세요.</div>';$$('[data-status]').forEach(el=>el.onchange=()=>{const x=state.ideas.find(x=>x.id===el.dataset.status);if(x)x.status=el.value;sSave();renderIdeas()});$$('[data-delete]').forEach(el=>el.onclick=()=>{state.ideas=state.ideas.filter(x=>x.id!==el.dataset.delete);sSave();renderIdeas()})}
 function addIdea(title,desc=''){if(!title.trim())return toast('아이디어 제목을 입력하세요');state.ideas.unshift({id:String(Date.now())+'-'+Math.random().toString(36).slice(2,5),title:title.trim(),desc,status:'아이디어'});sSave();renderIdeas();toast('아이디어를 보관했습니다')}
-function renderSources(){const list=$('#sourceList');list.innerHTML=state.papers.length?state.papers.map(p=>`<article class="article"><span class="tag mint">메타데이터 조회됨</span><h4>${esc(p.title)}</h4><div class="small">${esc(p.author)} · ${esc(p.year)} · ${esc(p.journal)}</div><small>Europe PMC에서 확인한 서지 정보 · 논문 본문 및 연구 결과는 검토 전</small><a target="_blank" rel="noopener noreferrer" href="${esc(p.url)}">서지 정보 / 논문 확인 ↗</a></article>`).join(''):`<article class="article"><b>아직 수집된 학술 메타데이터가 없습니다.</b><p class="small">'Europe PMC 논문 가져오기' 버튼으로 실제 학술 서지 정보를 불러올 수 있습니다. 네트워크 오류 시에는 표시하지 않습니다.</p><a href="https://europepmc.org/" target="_blank" rel="noopener noreferrer">Europe PMC ↗</a></article>`}
+function renderSources(){const list=$('#sourceList');list.innerHTML=state.papers.length?state.papers.map(p=>`<article class="article"><span class="tag mint">메타데이터 조회됨</span><h4>${esc(p.title)}</h4><div class="small">${esc(p.author)} · ${esc(p.year)} · ${esc(p.journal)}</div><small>Europe PMC에서 확인한 서지 정보 · 논문 본문 및 연구 결과는 검토 전</small><a target="_blank" rel="noopener noreferrer" href="${esc(p.url)}">서지 정보 / 논문 확인 ↗</a></article>`).join(''):`<article class="article"><b>생활 속 과학 참고자료</b><p class="small">추천 주제에는 FDA·NIH·CDC·MedlinePlus 공식 자료가 포함됩니다. 원문 논문 검색은 아래 Europe PMC 버튼을 이용하세요.</p><a href="https://ods.od.nih.gov/factsheets/WYNTK-Consumer/" target="_blank" rel="noopener noreferrer">NIH ODS 영양제 안내 ↗</a><br><a href="https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/" target="_blank" rel="noopener noreferrer">MedlinePlus 검진 수치 해석 ↗</a><br><a href="https://www.nhlbi.nih.gov/health/sleep-deprivation/healthy-sleep-habits" target="_blank" rel="noopener noreferrer">NIH 수면 습관 가이드 ↗</a></article>`}
 async function fetchPapers(){const query=activeTopic().query||'medical artificial intelligence',url='https://www.ebi.ac.uk/europepmc/webservices/rest/search?'+new URLSearchParams({query:query+' AND FIRST_PDATE:[2024 TO 2026]',format:'json',resultType:'core',pageSize:'10'});$('#paperState').textContent='학술 서지 정보를 불러오는 중…';$('#loadPaper').disabled=true;$('#updateSources').disabled=true;try{const controller=new AbortController();const handle=setTimeout(()=>controller.abort(),13000);const res=await fetch(url,{signal:controller.signal});clearTimeout(handle);if(!res.ok)throw Error('HTTP '+res.status);const json=await res.json();const data=(json.resultList?.result||[]).filter(p=>p.title&&(p.doi||p.id)).slice(0,9).map(p=>({title:p.title,author:p.authorString||'저자 미확인',year:p.firstPublicationDate?.slice(0,4)||p.pubYear||'',date:p.firstPublicationDate||'',doi:p.doi||'',journal:p.journalTitle||'',url:p.doi?`https://doi.org/${encodeURIComponent(p.doi)}`:`https://europepmc.org/article/${encodeURIComponent(p.source||'MED')}/${encodeURIComponent(p.id)}`,fetchedAt:new Date().toLocaleString('ko-KR',{timeZone:'Asia/Seoul'})}));if(!data.length)throw Error('결과 없음');state.papers=[...data,...state.papers.filter(p=>!data.some(q=>q.title===p.title))].slice(0,45);sSave();$('#paperState').textContent=`${data.length}편 메타데이터 확인됨`;const first=data[0];retrieved={...first,date:currentDate,index:currentIndex};renderSources();renderStory();toast('논문 메타데이터를 불러왔습니다. 원문은 별도 확인하세요')}
 catch(e){$('#paperState').textContent='실시간 수집 실패 · 상시 기획안 유지';toast('연결 실패: 실제 연구 결과로 표시하지 않습니다')}
 finally{$('#loadPaper').disabled=false;$('#updateSources').disabled=false}}
@@ -79,7 +562,7 @@ function exportData(){const blob=new Blob([JSON.stringify({exportedAt:new Date()
 function renderSettings(){$('#sVoice').value=state.settings.voice;$('#sTime').value=state.settings.time;$('#sFocus').value=state.settings.focus}
 function wire(){$$('[data-view]').forEach(b=>b.onclick=()=>showView(b.dataset.view));$('#regen').onclick=()=>{const max=db[dayNum(currentDate)].length;currentIndex=(currentIndex+1)%max;state.indexes={...state.indexes,[currentDate]:currentIndex};retrieved=null;sSave();renderStory();toast('다른 주제 후보로 변경했습니다')};$('#saveIdea').onclick=()=>{const t=activeTopic();addIdea(t.title,t.desc)};$('#loadPaper').onclick=fetchPapers;$('#updateSources').onclick=fetchPapers;$('#draft').oninput=e=>{state.drafts[draftKey()]=e.target.value;sSave();$('#draftStatus').textContent='자동 저장됨'};$('#copyDraft').onclick=()=>copyText($('#draft').value);$('#saveDraft').onclick=()=>{state.drafts[draftKey()]=$('#draft').value;sSave();toast('초안을 저장했습니다');renderDraft()};$('#published').onclick=()=>{state.published[draftKey()]=!state.published[draftKey()];sSave();toast(state.published[draftKey()]?'게시 완료로 표시했습니다':'미게시 상태로 되돌렸습니다');renderDraft();renderWeek()};$('#addIdea').onclick=()=>{addIdea($('#ideaInput').value);$('#ideaInput').value=''};$('#ideaInput').onkeydown=e=>{if(e.key==='Enter')$('#addIdea').click()};$('#ideaSearch').oninput=renderIdeas;$('#ideaFilter').onchange=renderIdeas;$('#saveSettings').onclick=()=>{state.settings={voice:$('#sVoice').value,time:$('#sTime').value,focus:$('#sFocus').value};sSave();toast('설정이 저장되었습니다')};$('#exportData').onclick=exportData;}
 $('#todayDate').textContent=`${today.slice(0,4)}년 ${dateFull(today)} · KST`;
-if(state.lastOpened!==today){state.lastOpened=today;state.indexes={...state.indexes,[today]:0};sSave()}
+if(state.lastOpened!==today){state.lastOpened=today;sSave()}
 wire();renderSettings();renderStory();renderSources();
 })();
 
