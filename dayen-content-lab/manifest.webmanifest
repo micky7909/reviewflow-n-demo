@@ -1,18 +1,18 @@
 {
-  "name": "DAYEN CONTENT LAB",
-  "short_name": "DAYEN LAB",
-  "description": "생활 속 과학 콘텐츠를 SNS별로 기획하는 데이엔의 AI 콘텐츠 편집실",
+  "name": "DAYEN CONTENT LAB — 닥터냥의 과학 연구실",
+  "short_name": "닥터냥 Lab",
+  "description": "박사 고양이 닥터냥과 함께하는 생활 속 뇌과학 미스터리 연재 연구실",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#F8FBFD",
-  "theme_color": "#91BDF4",
+  "background_color": "#FBF8FF",
+  "theme_color": "#A18AE0",
   "icons": [
     {
-      "src": "/icon.svg",
+      "src": "/doctor-cat.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
